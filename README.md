@@ -1,5 +1,17 @@
-# type-racer
+# TypeRacer
 Code Institute Bootcamp - JS AI Pair Programming Challenge
+
+## Table of Contents
+
+- [Project Goal](#project-goal)
+- [User Goals](#user-goals)
+- [User Stories](#user-stories)
+    - [User Story 1](#user-story-1)
+    - [User Story 2](#user-story-2)
+    - [User Story 3](#user-story-3)
+    - [User Story 4](#user-story-4)
+    - [User Story 5](#user-story-5)
+- [Technologies Used](#technologies-used)
 
 ## Project Goal
 
@@ -82,3 +94,4 @@ The project will utilize the following technologies:
 - **CSS**: To style the web pages and make them visually appealing.
 - **JavaScript**: To add interactivity and functionality to the web pages.
 - **Bootstrap**: To quickly design and customize responsive mobile-first sites.
+- **Github Copilot**: To assist with code suggestions and improve development efficiency.
