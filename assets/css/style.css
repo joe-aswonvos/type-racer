@@ -10,7 +10,7 @@ h1 {
 }
 
 header {
-    background-color: #ff8400;
+    background: linear-gradient(45deg, #ff8400, #ffbb00);
     color: white;
 }
 
