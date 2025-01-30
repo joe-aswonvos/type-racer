@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('user-input');
     const timeDisplay = document.getElementById('time');
     const wpmDisplay = document.getElementById('wpm');
+    const levelDisplay = document.getElementById('level');
     let startTime, endTime;
 
     function updateSampleText() {
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const textOptions = texts[difficulty];
         const randomText = textOptions[Math.floor(Math.random() * textOptions.length)];
         sampleTextDiv.textContent = randomText;
+        levelDisplay.textContent = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
     }
 
     function startTest() {
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         userInput.disabled = false;
         userInput.value = '';
         userInput.focus();
+        updateSampleText();
     }
 
     function stopTest() {
@@ -72,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         stopButton.disabled = true;
         userInput.disabled = true;
         calculateWPM();
-        updateSampleText()
     }
 
     function retryTest() {
@@ -113,11 +115,33 @@ document.addEventListener('DOMContentLoaded', function() {
         wpmDisplay.textContent = wpm;
     }
 
+    function provideRealTimeFeedback() {
+        const sampleText = sampleTextDiv.textContent.trim();
+        const userText = userInput.value.trim();
+        const sampleWords = sampleText.split(' ');
+        const userWords = userText.split(' ');
+    
+        let feedbackHTML = '';
+        for (let i = 0; i < sampleWords.length; i++) {
+            if (userWords[i] === undefined) {
+                feedbackHTML += `<span>${sampleWords[i]}</span> `;
+            } else if (userWords[i] === sampleWords[i]) {
+                feedbackHTML += `<span style="color: blue;">${sampleWords[i]}</span> `;
+            } else if (i === userWords.length - 1) {
+                feedbackHTML += `<span style="background-color: yellow;">${sampleWords[i]}</span> `;
+            } else {
+                feedbackHTML += `<span style="color: red;">${sampleWords[i]}</span> `;
+            }
+        }
+        sampleTextDiv.innerHTML = feedbackHTML.trim();
+    }
+
     difficultySelect.addEventListener('change', updateSampleText);
     startButton.addEventListener('click', startTest);
     stopButton.addEventListener('click', stopTest);
     retryButton.addEventListener('click', retryTest);
     document.addEventListener('keydown', handleEnterKey);
+    userInput.addEventListener('input', provideRealTimeFeedback);
 
     // Initialize with a random text from the default difficulty level
     updateSampleText();
