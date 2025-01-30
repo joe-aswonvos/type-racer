@@ -95,3 +95,35 @@ The project will utilize the following technologies:
 - **JavaScript**: To add interactivity and functionality to the web pages.
 - **Bootstrap**: To quickly design and customize responsive mobile-first sites.
 - **Github Copilot**: To assist with code suggestions and improve development efficiency.
+
+
+---
+
+
+*The following section was written by co-pilot from the following prompt; '@workspace can you please compose a section for the readme headed features, and describe the game loop and the UE/UI features added, with justifications where appropriate, please also add a list of the 3 next best features to be added to the project'*
+
+## Features
+
+### Game Loop
+
+The game loop for TypeRacer is designed to provide a seamless and engaging experience for users looking to improve their typing speed. The loop consists of the following steps:
+
+1. **Select Difficulty**: Users can choose from three difficulty levels (Easy, Medium, Hard) to match their typing proficiency.
+2. **Start Test**: Upon clicking the "Start" button, a random text passage corresponding to the selected difficulty level is displayed. The user-input area is enabled, and the timer starts.
+3. **Typing Test**: Users type the displayed text in the user-input area. Real-time feedback is provided, highlighting correct words in blue, incorrect words in red, and the current word being typed in yellow.
+4. **Stop Test**: Users can stop the test by clicking the "Stop" button or pressing the "Enter" key. The timer stops, and the results, including time taken and words per minute (WPM), are displayed.
+5. **Retry Test**: Users can click the "Retry" button to start a new test with a different text passage.
+
+### User Experience (UX) and User Interface (UI) Features
+
+- **Responsive Design**: The test interface is designed to be responsive, ensuring a consistent experience across different devices and screen sizes. This allows users to practice typing on both desktop and mobile devices.
+- **Difficulty Levels**: Providing multiple difficulty levels ensures that users of varying skill levels can find a suitable challenge, promoting continuous improvement.
+- **Real-Time Feedback**: The real-time feedback feature enhances the user experience by providing immediate visual cues on typing accuracy. Correct words are highlighted in blue, incorrect words in red, and the current word in yellow. This helps users identify and correct mistakes as they type.
+- **Clear Instructions**: The inclusion of an "Instructions" button provides users with easy access to guidelines on how to use the tool effectively, improving usability.
+- **Results Display**: The results area displays the difficulty level, time taken, and WPM, giving users a clear summary of their performance. This helps users track their progress over time.
+
+### Next Best Features to Add
+
+1. **Leaderboard**: Implement a leaderboard to display the top scores of users. This feature would add a competitive element to the game, motivating users to improve their typing speed.
+2. **Custom Text Input**: Allow users to input their own text passages for the typing test. This feature would enable users to practice typing with content relevant to their interests or work.
+3. **Progress Tracking**: Add a feature to track and display users' progress over time, including historical WPM scores and accuracy rates. This would help users visualize their improvement and set goals for future practice.
